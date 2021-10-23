@@ -72,7 +72,8 @@
 						</header>
 						<div class="content">
 							<p>We'd <strong>love</strong> to hear from you! Here's how you can reach out to us.</p>
-							<form>
+							<form class="gform" method="post"
+                                action="https://script.google.com/macros/s/AKfycbxMdfEtJxPyMvhwCJm6zZB3hpYfImdni5VTDawnVOFc4aRmDvWEdUhwFULZ1YjGKgBIlw/exec">
 								<div class="fields">
 									<div class="field half">
 										<input type="text" name="name" id="name" placeholder="Name" />
@@ -84,9 +85,17 @@
 										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
 									</div>
 								</div>
-								<ul class="actions">
+								<!--
+                                <ul class="actions">
 									<li><input type="submit" value="Send Message" class="button primary" /></li>
 								</ul>
+                                -->
+                                <input type="submit" value="Send Message">
+                                        
+                                <div style="display:none" class="thankyou_message">
+                                    <br>
+                                    <p><em>Thanks</em> for contacting us! We'll get back to you soon!</p>
+                                    </div>
 							</form>
 						</div>
 						<footer>
@@ -114,6 +123,11 @@
 			</div>
 
 		<!-- Scripts -->
+            <script>
+                if ( window.history.replaceState )
+                    window.history.replaceState( null, null, window.location.href );
+            </script>
+            <script data-cfasync="false" src="submit-form.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
